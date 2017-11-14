@@ -15,6 +15,7 @@ val JodaTimeVersion   = "2.9.9"
 val LogbackVersion    = "1.2.3"
 val ScalaCheckVersion = "1.13.5"
 val ScalaTestVersion  = "3.0.4"
+val ScalaCheckCatsVersion = "0.3.3"
 
 libraryDependencies ++= Seq(
   "org.typelevel"  %% "cats-core"            % CatsVersion,
@@ -33,7 +34,8 @@ libraryDependencies ++= Seq(
   "org.http4s"     %% "http4s-dsl"           % Http4sVersion,
   "ch.qos.logback" %  "logback-classic"      % LogbackVersion,
   "org.scalacheck" %% "scalacheck"           % ScalaCheckVersion % Test,
-  "org.scalatest"  %% "scalatest"            % ScalaTestVersion  % Test
+  "org.scalatest"  %% "scalatest"            % ScalaTestVersion  % Test,
+  "io.github.amrhassan" %% "scalacheck-cats"      % ScalaCheckCatsVersion % Test
 )
 
 
@@ -88,3 +90,5 @@ scalacOptions ++= Seq(
 )
 
 enablePlugins(ScalafmtPlugin, JavaAppPackaging)
+
+addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.4")
